@@ -209,10 +209,3 @@ jobs:
           owner: ${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_OWNER }}
           repo: ${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_REPO }}
           token: ${{ secrets.RELEASE_TOKEN }}
-
-  flatpak_release:
-    uses: ./.github/workflows/flatpak.yml
-    needs: release
-    with:
-      ryujinx_version: "1.1.${{ github.run_number }}"
-    secrets: inherit
